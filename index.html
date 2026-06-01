@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConvertMed — Conversión de Medidas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icono">📐</span>
+            <span class="logo-texto">ConvertMed</span>
+        </div>
+        <div class="banner">
+            <h1>Conversión de Medidas</h1>
+            <p>Longitud · Peso · Temperatura</p>
+        </div>
+    </header>
+
+    <div class="contenedor">
+
+        <nav class="menu-lateral">
+            <ul>
+                <li><a href="#">🏠 Inicio</a></li>
+                <li><a href="#" class="activo">⚙️ Convertir</a></li>
+                <li><a href="#">ℹ️ Acerca de</a></li>
+            </ul>
+        </nav>
+
+        <main class="contenido">
+            <section class="calculadora">
+
+                <div class="tarjeta-titulo">
+                    <span class="icono-titulo">📐</span>
+                    <div>
+                        <h2>Calculadora</h2>
+                        <p class="subtitulo">Selecciona tipo y unidades</p>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="tipoConversion">Tipo de conversión:</label>
+                    <select id="tipoConversion" onchange="actualizarUnidades()">
+                        <option value="">— Seleccione —</option>
+                        <option value="longitud">📏 Longitud</option>
+                        <option value="peso">⚖️ Peso</option>
+                        <option value="temperatura">🌡️ Temperatura</option>
+                    </select>
+                </div>
+
+                <div class="fila-unidades">
+                    <div class="campo">
+                        <label for="unidadOrigen">De:</label>
+                        <select id="unidadOrigen">
+                            <option value="">Seleccione tipo</option>
+                        </select>
+                    </div>
+                    <div class="flecha">→</div>
+                    <div class="campo">
+                        <label for="unidadDestino">A:</label>
+                        <select id="unidadDestino">
+                            <option value="">Seleccione tipo</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="valorEntrada">Valor a convertir:</label>
+                    <input type="number" id="valorEntrada"
+                           placeholder="Ej: 100">
+                </div>
+
+                <div class="fila-botones">
+                    <button onclick="calcular()">⚡ Calcular</button>
+                    <button class="btn-limpiar" onclick="limpiar()">🗑️ Limpiar</button>
+                </div>
+
+                <div id="historial" class="historial"></div>
+
+                <div class="campo">
+                    <label for="resultado">Resultado:</label>
+                    <input type="text" id="resultado"
+                           placeholder="El resultado aparecerá aquí"
+                           readonly>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
